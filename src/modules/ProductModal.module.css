@@ -1,0 +1,182 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  overflow-y: auto;
+}
+
+.modal {
+  position: relative;
+  max-width: 744px;
+  width: 100%;
+  margin: auto;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--light);
+  display: flex;
+}
+
+.image {
+  width: 45%;
+  object-fit: cover;
+}
+
+.content {
+  width: 55%;
+  padding: 40px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.header {
+  max-width: 320px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 16px;
+}
+
+.field {
+  color: #b8b8b8;
+}
+
+.value {
+  text-align: right;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity {
+  display: flex;
+  gap: 4px;
+}
+
+.submit {
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 14px 24px;
+  color: var(--accent);
+}
+
+.submit:hover,
+.submit:focus-visible {
+  border-color: var(--fon);
+  color: var(--fon);
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  outline: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.close:hover,
+.close:focus-visible {
+  outline-color: var(--accent);
+  color: var(--accent);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 940px) {
+  .modal {
+    max-width: 524px;
+  }
+
+  .content {
+    padding: 24px 24px 16px;
+    gap: 31px;
+  }
+
+  .header {
+    max-width: 230px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .item {
+    font-size: 12px;
+  }
+
+  .count {
+    gap: 2px;
+  }
+
+  .btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .submit {
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 660px) {
+  .overlay {
+    padding: 15px;
+  }
+
+  .modal {
+    flex-direction: column;
+    max-width: 290px;
+  }
+
+  .image {
+    width: 100%;
+    height: 276px;
+  }
+
+  .content {
+    width: 100%;
+    gap: 17px;
+    padding: 16px;
+  }
+
+  .title {
+    margin-bottom: 6px;
+  }
+
+  .close {
+    top: 16px;
+    right: 16px;
+  }
+}

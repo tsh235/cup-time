@@ -7,12 +7,13 @@ import { getActiveClass } from '../helpers.js';
 export const Header = () => {
   const { cart } = useCart();
   const { categories } = useProducts();
-  const totalQuantity = cart ? cart.reduce((acc, item) => (acc + item.quantity), 0) : 0;
   const [isNavOpen, setIsNavOpen] = useState(false);
+  
+    useEffect(() => {
+      document.body.style.overflow = isNavOpen ? 'hidden' : 'auto';
+    }, [isNavOpen]);
 
-  useEffect(() => {
-    document.body.style.overflow = isNavOpen ? 'hidden' : 'auto';
-  }, [isNavOpen]);
+  const totalQuantity = cart ? cart.reduce((acc, item) => (acc + item.quantity), 0) : 0;
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
